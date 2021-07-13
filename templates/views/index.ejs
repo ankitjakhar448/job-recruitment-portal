@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar'); -%>
+    <section id="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="promo-titel">Find your dream Job</p>
+            <p>We will help you to find a sutable job for you.
+               we also provide service to find sutable emplyee for your company.
+            </p>
+          </div>
+          <div class="col-md-6 text-center">
+            <img class="image" src="images/home1.png" class="img-fluid">
+
+          </div>
+        </div>
+        
+      </div>
+      
+      
+
+
+    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" class="bootam-img" viewBox="0 0 1440 320"><path fill="#5f1782" fill-opacity="1" d="M0,192L30,192C60,192,120,192,180,165.3C240,139,300,85,360,90.7C420,96,480,160,540,202.7C600,245,660,267,720,261.3C780,256,840,224,900,202.7C960,181,1020,171,1080,170.7C1140,171,1200,181,1260,202.7C1320,224,1380,256,1410,272L1440,288L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+
+    
+<section id="services">
+  <div class="container text-center">
+    <h1 class="titel">WHAT CAN WE DO?</h1>
+    <div class="row text-center">
+      <div class="col-md-6 services">
+        <img src="images/joboffer.png" class="service-img">
+        <h4>you can find job</h4>
+
+      </div>
+      <div class="col-md-6 services">
+        <img src="images/jobpost.png" class="service-img">
+        <h4>you can post jobs</h4>
+
+      </div>
+      
+    </div>
+  </div>
+</section>
+<svg xmlns="http://www.w3.org/2000/svg" class="footer-img" viewBox="0 0 1440 320"><path fill="#5f1782" fill-opacity="1" d="M0,192L48,202.7C96,213,192,235,288,240C384,245,480,235,576,192C672,149,768,75,864,80C960,85,1056,171,1152,192C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+<section id="footer">
+  
+ <div class="container">
+   <div class="row">
+     <div class="col-md-4 footer-box">
+      <p>We will help you to find a sutable job for you.
+        we also provide service to find sutable emplyee for your company.
+     </p>
+     </div>
+
+     <div class="col-md-8 footer-box text-center">
+      <p>Created by Ankit Jakhar
+     </p>
+     </div>
+   </div>
+ </div>
+
+</section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    
+  </body>
+
+  <style>
+    #banner{
+      background-image: linear-gradient(to right,#5f1782,#5f1782);
+      color: #fff;
+      padding-top: 5%;
+    }
+    .promo-titel{
+      font-size: 40px;
+      font-weight: 600;
+      margin-top: 100px;
+    }
+
+    .image{
+      height: 250px;
+      width: 250px;
+      background: transparent;
+      color: violet;
+      overflow: hidden;
+    }
+    .bootam-img{
+      width: 100%;
+    }
+
+    #services{
+      padding: 80px 0;
+    }
+
+    .service-img{
+      width: 100px;
+      margin-top: 20px;
+    }
+
+    .services{
+      padding: 20px;
+    }
+
+    .services h4{
+      padding: 5px;
+      margin-top: 25px;
+      text-transform: uppercase;
+    }
+    
+    #footer{
+      background-image: linear-gradient(to right,#5f1782,#5f1782);
+      color: #fff;;
+    }
+
+    .footer-img{
+      width: 100%;
+    }
+    
+  </style>
+</html>

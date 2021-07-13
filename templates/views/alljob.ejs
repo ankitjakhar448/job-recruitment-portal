@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Profile</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+
+        
+</head>
+
+<body>
+    <%- include('../partials/navbar'); -%>
+
+  
+
+<div class="container-fluid content-box">
+<div id="dd" class="row display-flex all-jobs-row filtered-job">
+
+    
+        
+    </div>
+</div>
+
+
+       
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#prform").hide()
+
+
+        $.get('/jobs/all', function (data, status) {
+            console.log(data)
+            var divdata=document.getElementById('dd')
+        
+            
+            for(var i=0;i<data.length;i++)
+            {
+                var v=`<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card ">
+            <div class="row" style="word-wrap:break-word;">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="">
+                        <img src="images/image.jpg" class="job-company-logo">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                    <div class="row job-card-row">
+                        <div class="col-sm-12 company-info">
+                            <h4 style="margin-top: auto;font-weight: bold;"> GeeksforGeeks </h4> 
+                            <small class="text-muted">Apply before  <span class="job-card__subtext">Sun Apr 04 2021</span> </small>
+                        </div>
+                    </div>
+                    <div class="row job-card-row" style="margin-top:20px;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3 job-card__icon" style="padding-top: 0px;">
+                                    <i class="fa fa-user" aria-hidden="true" style="font-size: 2.1em;"></i>
+                                </div>
+                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-9"> 
+                                    <span class="job-card__subtext-key text-muted">  Looking For </span> <br> <span class="job-card__subtext">${data[i].titel}</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3  job-card__icon" style="padding-top: 0px;">
+                                    <i class="fas fa-map-marker-alt fa-2x" aria-hidden="true"></i>
+                                    
+                                </div>
+                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-9">
+                                    <span class="job-card__subtext-key text-muted"> Location </span><br> 
+                                    <span class="job-card__subtext">Noida, sector 136</span>                               
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row job-card-row" style="margin-top:15px;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3 job-card__icon" style="padding-left:15px;">
+                                    
+                                    <i class="fas fa-rupee-sign" aria-hidden="true" style="font-size: 2.1em;margin-top: -4px;"></i>
+                                    
+                                </div>
+                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-9">
+                                    <span class="job-card__subtext-key text-muted"> Salary</span><br> 
+                                    <span class="job-card__subtext">7 to 15 LPA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3 job-card__icon">
+                                    <i class="fa fa-briefcase fa-2x" aria-hidden="true"></i> 
+                                </div>
+                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-9">
+                                    <span class="job-card__subtext-key text-muted"> Experience</span> <br> 
+                                    <span class="job-card__subtext">${data[i].dis}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                        `
+
+                        
+                        
+
+                        divdata.innerHTML+=v
+            }
+
+
+           
+
+
+        })
+        
+    })
+</script>
+
+<style>
+
+body{
+    background-color: whitesmoke;
+}
+.card{
+    background-color: white;
+    padding: 10px;
+    border-radius: 1%;
+     position: relative;
+    display:flex;
+    flex-direction: column;
+    margin: 10px;
+    
+}
+
+
+.company-info{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.job-card__icon{
+ padding: 10px;   
+ color: grey;
+}
+
+.job-card__subtext{
+    color: green;
+    margin-left: 3px;
+}
+.job-company-logo{
+    height: 80px;
+    width: 80px;
+}
+</style>
+
+</html>

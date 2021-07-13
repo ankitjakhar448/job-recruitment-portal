@@ -1,0 +1,170 @@
+<div id="nav-bar">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#abc"
+                aria-controls="abc" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="abc">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/company/me">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">View Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/postjob">Post job</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/alljob">View jobs</a>
+                    </li>
+                </ul>
+                <button type="button" id="signupbtn" class="btn btn-dark mx-2" data-bs-toggle="modal" data-bs-target="#signup">Sign
+                    Up</button>
+
+                <button type="button" id="signinbtn" class="btn btn-dark mx-2" data-bs-toggle="modal" data-bs-target="#signin">Sign
+                    In</button>
+
+                <button type="button" id="userprofile" class="btn btn-dark mx-2" >Profile</button>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="singinLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+
+                        <form action="/users/login" method="POST" id="form">
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="lemail" placeholder="Enter email"
+                                    name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="lpassword" placeholder="Enter password"
+                                    name="password">
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <h2>Register</h2>
+                        <form action="/users" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="rname" placeholder="Enter name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="remail" placeholder="Enter email"
+                                    name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="rpassword" placeholder="Enter password"
+                                    name="password">
+                            </div>
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script>
+
+ $('#userprofile').hide()
+    $(document).ready(function(){
+        $.get('/user/islogin',function(data,status){
+            if(status=='success')
+            {
+                $('#userprofile').show()
+                $('#signupbtn').hide()
+                $('#signinbtn').hide()
+            }
+
+        })
+
+    })
+   
+
+    
+
+
+
+
+</script>
+
+<style>
+
+    #nav-bar{
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+</style>
